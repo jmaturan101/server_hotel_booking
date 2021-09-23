@@ -1,0 +1,45 @@
+{
+  "version": "13.0.0",
+  "files": {
+    "0805f2f91b06617c5aebeb49fbb73981f5f9dd0a1f98544183353488a455db97": {
+      "source": {
+        "path": "asset.0805f2f91b06617c5aebeb49fbb73981f5f9dd0a1f98544183353488a455db97",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "current_account-current_region": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "0805f2f91b06617c5aebeb49fbb73981f5f9dd0a1f98544183353488a455db97.zip",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    },
+    "1541623ed4a959b16d88fa080af6d9e120f65bf0f48d00b47636da588562f091": {
+      "source": {
+        "path": "asset.1541623ed4a959b16d88fa080af6d9e120f65bf0f48d00b47636da588562f091",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "current_account-current_region": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "1541623ed4a959b16d88fa080af6d9e120f65bf0f48d00b47636da588562f091.zip",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    },
+    "3ad93b61c7f9b8806713401d109c310633e01d01672edefea690ee652ddf6b74": {
+      "source": {
+        "path": "Hotel-Booking.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-current_region": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "3ad93b61c7f9b8806713401d109c310633e01d01672edefea690ee652ddf6b74.json",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

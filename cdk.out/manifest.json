@@ -1,0 +1,200 @@
+{
+  "version": "13.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "Hotel-Booking.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "Hotel-Booking.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "Hotel-Booking": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "Hotel-Booking.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3ad93b61c7f9b8806713401d109c310633e01d01672edefea690ee652ddf6b74.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "Hotel-Booking.assets"
+        ],
+        "stackName": "HotelBooking"
+      },
+      "dependencies": [
+        "Hotel-Booking.assets"
+      ],
+      "metadata": {
+        "/Hotel-Booking/HotelApi/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HotelApi7FAF7AD2"
+          }
+        ],
+        "/Hotel-Booking/HotelApi/CloudWatchRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HotelApiCloudWatchRoleEC3371D9"
+          }
+        ],
+        "/Hotel-Booking/HotelApi/Account": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HotelApiAccount71BC6E26"
+          }
+        ],
+        "/Hotel-Booking/HotelApi/Deployment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HotelApiDeployment9FAFEB261c03a39f00b84081e4e8e103ec8bcea4"
+          }
+        ],
+        "/Hotel-Booking/HotelApi/DeploymentStage.prod/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HotelApiDeploymentStageprodCE44C8C1"
+          }
+        ],
+        "/Hotel-Booking/HotelApi/Endpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HotelApiEndpointCCD25F7C"
+          }
+        ],
+        "/Hotel-Booking/HotelApi/Default/hello/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HotelApihello990B0804"
+          }
+        ],
+        "/Hotel-Booking/HotelApi/Default/hello/GET/ApiPermission.HotelBookingHotelApi3F54A397.GET..hello": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HotelApihelloGETApiPermissionHotelBookingHotelApi3F54A397GEThelloA4DFF6B9"
+          }
+        ],
+        "/Hotel-Booking/HotelApi/Default/hello/GET/ApiPermission.Test.HotelBookingHotelApi3F54A397.GET..hello": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HotelApihelloGETApiPermissionTestHotelBookingHotelApi3F54A397GEThello8FDA48B8"
+          }
+        ],
+        "/Hotel-Booking/HotelApi/Default/hello/GET/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HotelApihelloGETE0FF261C"
+          }
+        ],
+        "/Hotel-Booking/HotelApi/Default/hotels/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HotelApihotels65D3E07F"
+          }
+        ],
+        "/Hotel-Booking/HotelApi/Default/hotels/POST/ApiPermission.HotelBookingHotelApi3F54A397.POST..hotels": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HotelApihotelsPOSTApiPermissionHotelBookingHotelApi3F54A397POSThotelsC88FAD72"
+          }
+        ],
+        "/Hotel-Booking/HotelApi/Default/hotels/POST/ApiPermission.Test.HotelBookingHotelApi3F54A397.POST..hotels": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HotelApihotelsPOSTApiPermissionTestHotelBookingHotelApi3F54A397POSThotels761ACEEF"
+          }
+        ],
+        "/Hotel-Booking/HotelApi/Default/hotels/POST/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HotelApihotelsPOSTD51FAA37"
+          }
+        ],
+        "/Hotel-Booking/hotelsTable": [
+          {
+            "type": "aws:cdk:hasPhysicalName",
+            "data": {
+              "Ref": "hotelsTableAEA1B8E6"
+            }
+          }
+        ],
+        "/Hotel-Booking/hotelsTable/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "hotelsTableAEA1B8E6"
+          }
+        ],
+        "/Hotel-Booking/hotelsTable-Create/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "hotelsTableCreateServiceRole6DFE7510"
+          }
+        ],
+        "/Hotel-Booking/hotelsTable-Create/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "hotelsTableCreateServiceRoleDefaultPolicy1F9383F3"
+          }
+        ],
+        "/Hotel-Booking/hotelsTable-Create/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "hotelsTableCreate1DB71F4A"
+          }
+        ],
+        "/Hotel-Booking/helloLambdaNodeJs/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "helloLambdaNodeJsServiceRole17C143C3"
+          }
+        ],
+        "/Hotel-Booking/helloLambdaNodeJs/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "helloLambdaNodeJsServiceRoleDefaultPolicy14D90D8C"
+          }
+        ],
+        "/Hotel-Booking/helloLambdaNodeJs/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "helloLambdaNodeJs14E63891"
+          }
+        ],
+        "/Hotel-Booking/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/Hotel-Booking/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/Hotel-Booking/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/Hotel-Booking/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "Hotel-Booking"
+    }
+  }
+}

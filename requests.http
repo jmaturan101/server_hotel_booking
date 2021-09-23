@@ -1,0 +1,13 @@
+@endpoint = https://cy3zoyyuyd.execute-api.us-east-1.amazonaws.com/prod/
+
+GET {{endpoint}}/hello/
+###
+
+POST {{endpoint}}/hotels/
+Content-Type: application/json
+
+{
+    "location": "Asia",
+    "name": "Best location"
+}
+### 
