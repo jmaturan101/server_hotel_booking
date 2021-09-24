@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "@aws-amplify/auth": "^4.3.8",
     "@types/aws-lambda": "^8.10.83",
     "@types/node": "^16.9.6",
     "@types/uuid": "^8.3.1",
+    "aws-amplify": "^4.3.0",
     "aws-cdk": "^1.124.0",
     "aws-cdk-lib": "^2.0.0-rc.21",
     "aws-sdk": "^2.992.0",
