@@ -143,7 +143,7 @@
                           "Ref": "HotelApi7FAF7AD2"
                         },
                         "deploymentId": {
-                          "Ref": "HotelApiDeployment9FAFEB261c03a39f00b84081e4e8e103ec8bcea4"
+                          "Ref": "HotelApiDeployment9FAFEB2664b4be66ac1217bafbd42872cea29a85"
                         },
                         "stageName": "prod"
                       }
@@ -534,6 +534,462 @@
                           "fqn": "aws-cdk-lib.aws_apigateway.Method",
                           "version": "2.0.0-rc.21"
                         }
+                      },
+                      "GET": {
+                        "id": "GET",
+                        "path": "Hotel-Booking/HotelApi/Default/hotels/GET",
+                        "children": {
+                          "ApiPermission.HotelBookingHotelApi3F54A397.GET..hotels": {
+                            "id": "ApiPermission.HotelBookingHotelApi3F54A397.GET..hotels",
+                            "path": "Hotel-Booking/HotelApi/Default/hotels/GET/ApiPermission.HotelBookingHotelApi3F54A397.GET..hotels",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                              "aws:cdk:cloudformation:props": {
+                                "action": "lambda:InvokeFunction",
+                                "functionName": {
+                                  "Fn::GetAtt": [
+                                    "hotelsTableRead4582DF29",
+                                    "Arn"
+                                  ]
+                                },
+                                "principal": "apigateway.amazonaws.com",
+                                "sourceArn": {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      "arn:",
+                                      {
+                                        "Ref": "AWS::Partition"
+                                      },
+                                      ":execute-api:",
+                                      {
+                                        "Ref": "AWS::Region"
+                                      },
+                                      ":",
+                                      {
+                                        "Ref": "AWS::AccountId"
+                                      },
+                                      ":",
+                                      {
+                                        "Ref": "HotelApi7FAF7AD2"
+                                      },
+                                      "/",
+                                      {
+                                        "Ref": "HotelApiDeploymentStageprodCE44C8C1"
+                                      },
+                                      "/GET/hotels"
+                                    ]
+                                  ]
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_lambda.CfnPermission",
+                              "version": "2.0.0-rc.21"
+                            }
+                          },
+                          "ApiPermission.Test.HotelBookingHotelApi3F54A397.GET..hotels": {
+                            "id": "ApiPermission.Test.HotelBookingHotelApi3F54A397.GET..hotels",
+                            "path": "Hotel-Booking/HotelApi/Default/hotels/GET/ApiPermission.Test.HotelBookingHotelApi3F54A397.GET..hotels",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                              "aws:cdk:cloudformation:props": {
+                                "action": "lambda:InvokeFunction",
+                                "functionName": {
+                                  "Fn::GetAtt": [
+                                    "hotelsTableRead4582DF29",
+                                    "Arn"
+                                  ]
+                                },
+                                "principal": "apigateway.amazonaws.com",
+                                "sourceArn": {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      "arn:",
+                                      {
+                                        "Ref": "AWS::Partition"
+                                      },
+                                      ":execute-api:",
+                                      {
+                                        "Ref": "AWS::Region"
+                                      },
+                                      ":",
+                                      {
+                                        "Ref": "AWS::AccountId"
+                                      },
+                                      ":",
+                                      {
+                                        "Ref": "HotelApi7FAF7AD2"
+                                      },
+                                      "/test-invoke-stage/GET/hotels"
+                                    ]
+                                  ]
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_lambda.CfnPermission",
+                              "version": "2.0.0-rc.21"
+                            }
+                          },
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "Hotel-Booking/HotelApi/Default/hotels/GET/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
+                              "aws:cdk:cloudformation:props": {
+                                "httpMethod": "GET",
+                                "resourceId": {
+                                  "Ref": "HotelApihotels65D3E07F"
+                                },
+                                "restApiId": {
+                                  "Ref": "HotelApi7FAF7AD2"
+                                },
+                                "authorizationType": "NONE",
+                                "integration": {
+                                  "type": "AWS_PROXY",
+                                  "uri": {
+                                    "Fn::Join": [
+                                      "",
+                                      [
+                                        "arn:",
+                                        {
+                                          "Ref": "AWS::Partition"
+                                        },
+                                        ":apigateway:",
+                                        {
+                                          "Ref": "AWS::Region"
+                                        },
+                                        ":lambda:path/2015-03-31/functions/",
+                                        {
+                                          "Fn::GetAtt": [
+                                            "hotelsTableRead4582DF29",
+                                            "Arn"
+                                          ]
+                                        },
+                                        "/invocations"
+                                      ]
+                                    ]
+                                  },
+                                  "integrationHttpMethod": "POST"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_apigateway.CfnMethod",
+                              "version": "2.0.0-rc.21"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_apigateway.Method",
+                          "version": "2.0.0-rc.21"
+                        }
+                      },
+                      "PUT": {
+                        "id": "PUT",
+                        "path": "Hotel-Booking/HotelApi/Default/hotels/PUT",
+                        "children": {
+                          "ApiPermission.HotelBookingHotelApi3F54A397.PUT..hotels": {
+                            "id": "ApiPermission.HotelBookingHotelApi3F54A397.PUT..hotels",
+                            "path": "Hotel-Booking/HotelApi/Default/hotels/PUT/ApiPermission.HotelBookingHotelApi3F54A397.PUT..hotels",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                              "aws:cdk:cloudformation:props": {
+                                "action": "lambda:InvokeFunction",
+                                "functionName": {
+                                  "Fn::GetAtt": [
+                                    "hotelsTableUpdate422043EF",
+                                    "Arn"
+                                  ]
+                                },
+                                "principal": "apigateway.amazonaws.com",
+                                "sourceArn": {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      "arn:",
+                                      {
+                                        "Ref": "AWS::Partition"
+                                      },
+                                      ":execute-api:",
+                                      {
+                                        "Ref": "AWS::Region"
+                                      },
+                                      ":",
+                                      {
+                                        "Ref": "AWS::AccountId"
+                                      },
+                                      ":",
+                                      {
+                                        "Ref": "HotelApi7FAF7AD2"
+                                      },
+                                      "/",
+                                      {
+                                        "Ref": "HotelApiDeploymentStageprodCE44C8C1"
+                                      },
+                                      "/PUT/hotels"
+                                    ]
+                                  ]
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_lambda.CfnPermission",
+                              "version": "2.0.0-rc.21"
+                            }
+                          },
+                          "ApiPermission.Test.HotelBookingHotelApi3F54A397.PUT..hotels": {
+                            "id": "ApiPermission.Test.HotelBookingHotelApi3F54A397.PUT..hotels",
+                            "path": "Hotel-Booking/HotelApi/Default/hotels/PUT/ApiPermission.Test.HotelBookingHotelApi3F54A397.PUT..hotels",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                              "aws:cdk:cloudformation:props": {
+                                "action": "lambda:InvokeFunction",
+                                "functionName": {
+                                  "Fn::GetAtt": [
+                                    "hotelsTableUpdate422043EF",
+                                    "Arn"
+                                  ]
+                                },
+                                "principal": "apigateway.amazonaws.com",
+                                "sourceArn": {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      "arn:",
+                                      {
+                                        "Ref": "AWS::Partition"
+                                      },
+                                      ":execute-api:",
+                                      {
+                                        "Ref": "AWS::Region"
+                                      },
+                                      ":",
+                                      {
+                                        "Ref": "AWS::AccountId"
+                                      },
+                                      ":",
+                                      {
+                                        "Ref": "HotelApi7FAF7AD2"
+                                      },
+                                      "/test-invoke-stage/PUT/hotels"
+                                    ]
+                                  ]
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_lambda.CfnPermission",
+                              "version": "2.0.0-rc.21"
+                            }
+                          },
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "Hotel-Booking/HotelApi/Default/hotels/PUT/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
+                              "aws:cdk:cloudformation:props": {
+                                "httpMethod": "PUT",
+                                "resourceId": {
+                                  "Ref": "HotelApihotels65D3E07F"
+                                },
+                                "restApiId": {
+                                  "Ref": "HotelApi7FAF7AD2"
+                                },
+                                "authorizationType": "NONE",
+                                "integration": {
+                                  "type": "AWS_PROXY",
+                                  "uri": {
+                                    "Fn::Join": [
+                                      "",
+                                      [
+                                        "arn:",
+                                        {
+                                          "Ref": "AWS::Partition"
+                                        },
+                                        ":apigateway:",
+                                        {
+                                          "Ref": "AWS::Region"
+                                        },
+                                        ":lambda:path/2015-03-31/functions/",
+                                        {
+                                          "Fn::GetAtt": [
+                                            "hotelsTableUpdate422043EF",
+                                            "Arn"
+                                          ]
+                                        },
+                                        "/invocations"
+                                      ]
+                                    ]
+                                  },
+                                  "integrationHttpMethod": "POST"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_apigateway.CfnMethod",
+                              "version": "2.0.0-rc.21"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_apigateway.Method",
+                          "version": "2.0.0-rc.21"
+                        }
+                      },
+                      "DELETE": {
+                        "id": "DELETE",
+                        "path": "Hotel-Booking/HotelApi/Default/hotels/DELETE",
+                        "children": {
+                          "ApiPermission.HotelBookingHotelApi3F54A397.DELETE..hotels": {
+                            "id": "ApiPermission.HotelBookingHotelApi3F54A397.DELETE..hotels",
+                            "path": "Hotel-Booking/HotelApi/Default/hotels/DELETE/ApiPermission.HotelBookingHotelApi3F54A397.DELETE..hotels",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                              "aws:cdk:cloudformation:props": {
+                                "action": "lambda:InvokeFunction",
+                                "functionName": {
+                                  "Fn::GetAtt": [
+                                    "hotelsTableDeleteF55A7AC8",
+                                    "Arn"
+                                  ]
+                                },
+                                "principal": "apigateway.amazonaws.com",
+                                "sourceArn": {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      "arn:",
+                                      {
+                                        "Ref": "AWS::Partition"
+                                      },
+                                      ":execute-api:",
+                                      {
+                                        "Ref": "AWS::Region"
+                                      },
+                                      ":",
+                                      {
+                                        "Ref": "AWS::AccountId"
+                                      },
+                                      ":",
+                                      {
+                                        "Ref": "HotelApi7FAF7AD2"
+                                      },
+                                      "/",
+                                      {
+                                        "Ref": "HotelApiDeploymentStageprodCE44C8C1"
+                                      },
+                                      "/DELETE/hotels"
+                                    ]
+                                  ]
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_lambda.CfnPermission",
+                              "version": "2.0.0-rc.21"
+                            }
+                          },
+                          "ApiPermission.Test.HotelBookingHotelApi3F54A397.DELETE..hotels": {
+                            "id": "ApiPermission.Test.HotelBookingHotelApi3F54A397.DELETE..hotels",
+                            "path": "Hotel-Booking/HotelApi/Default/hotels/DELETE/ApiPermission.Test.HotelBookingHotelApi3F54A397.DELETE..hotels",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                              "aws:cdk:cloudformation:props": {
+                                "action": "lambda:InvokeFunction",
+                                "functionName": {
+                                  "Fn::GetAtt": [
+                                    "hotelsTableDeleteF55A7AC8",
+                                    "Arn"
+                                  ]
+                                },
+                                "principal": "apigateway.amazonaws.com",
+                                "sourceArn": {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      "arn:",
+                                      {
+                                        "Ref": "AWS::Partition"
+                                      },
+                                      ":execute-api:",
+                                      {
+                                        "Ref": "AWS::Region"
+                                      },
+                                      ":",
+                                      {
+                                        "Ref": "AWS::AccountId"
+                                      },
+                                      ":",
+                                      {
+                                        "Ref": "HotelApi7FAF7AD2"
+                                      },
+                                      "/test-invoke-stage/DELETE/hotels"
+                                    ]
+                                  ]
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_lambda.CfnPermission",
+                              "version": "2.0.0-rc.21"
+                            }
+                          },
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "Hotel-Booking/HotelApi/Default/hotels/DELETE/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
+                              "aws:cdk:cloudformation:props": {
+                                "httpMethod": "DELETE",
+                                "resourceId": {
+                                  "Ref": "HotelApihotels65D3E07F"
+                                },
+                                "restApiId": {
+                                  "Ref": "HotelApi7FAF7AD2"
+                                },
+                                "authorizationType": "NONE",
+                                "integration": {
+                                  "type": "AWS_PROXY",
+                                  "uri": {
+                                    "Fn::Join": [
+                                      "",
+                                      [
+                                        "arn:",
+                                        {
+                                          "Ref": "AWS::Partition"
+                                        },
+                                        ":apigateway:",
+                                        {
+                                          "Ref": "AWS::Region"
+                                        },
+                                        ":lambda:path/2015-03-31/functions/",
+                                        {
+                                          "Fn::GetAtt": [
+                                            "hotelsTableDeleteF55A7AC8",
+                                            "Arn"
+                                          ]
+                                        },
+                                        "/invocations"
+                                      ]
+                                    ]
+                                  },
+                                  "integrationHttpMethod": "POST"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_apigateway.CfnMethod",
+                              "version": "2.0.0-rc.21"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_apigateway.Method",
+                          "version": "2.0.0-rc.21"
+                        }
                       }
                     },
                     "constructInfo": {
@@ -573,6 +1029,28 @@
                       {
                         "attributeName": "hotelId",
                         "attributeType": "S"
+                      },
+                      {
+                        "attributeName": "location",
+                        "attributeType": "S"
+                      }
+                    ],
+                    "globalSecondaryIndexes": [
+                      {
+                        "indexName": "location",
+                        "keySchema": [
+                          {
+                            "attributeName": "location",
+                            "keyType": "HASH"
+                          }
+                        ],
+                        "projection": {
+                          "projectionType": "ALL"
+                        },
+                        "provisionedThroughput": {
+                          "readCapacityUnits": 5,
+                          "writeCapacityUnits": 5
+                        }
                       }
                     ],
                     "provisionedThroughput": {
@@ -676,7 +1154,18 @@
                                       ]
                                     },
                                     {
-                                      "Ref": "AWS::NoValue"
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          {
+                                            "Fn::GetAtt": [
+                                              "hotelsTableAEA1B8E6",
+                                              "Arn"
+                                            ]
+                                          },
+                                          "/index/*"
+                                        ]
+                                      ]
                                     }
                                   ]
                                 }
@@ -770,6 +1259,594 @@
                       }
                     },
                     "functionName": "hotelsTable-Create",
+                    "handler": "index.handler",
+                    "runtime": "nodejs14.x"
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                  "version": "2.0.0-rc.21"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_lambda_nodejs.NodejsFunction",
+              "version": "2.0.0-rc.21"
+            }
+          },
+          "hotelsTable-Read": {
+            "id": "hotelsTable-Read",
+            "path": "Hotel-Booking/hotelsTable-Read",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "Hotel-Booking/hotelsTable-Read/ServiceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "Hotel-Booking/hotelsTable-Read/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                      "version": "2.0.0-rc.21"
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "Hotel-Booking/hotelsTable-Read/ServiceRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "Hotel-Booking/hotelsTable-Read/ServiceRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": [
+                                    "dynamodb:BatchGetItem",
+                                    "dynamodb:GetRecords",
+                                    "dynamodb:GetShardIterator",
+                                    "dynamodb:Query",
+                                    "dynamodb:GetItem",
+                                    "dynamodb:Scan",
+                                    "dynamodb:ConditionCheckItem"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": [
+                                    {
+                                      "Fn::GetAtt": [
+                                        "hotelsTableAEA1B8E6",
+                                        "Arn"
+                                      ]
+                                    },
+                                    {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          {
+                                            "Fn::GetAtt": [
+                                              "hotelsTableAEA1B8E6",
+                                              "Arn"
+                                            ]
+                                          },
+                                          "/index/*"
+                                        ]
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "hotelsTableReadServiceRoleDefaultPolicyB40A4AE7",
+                            "roles": [
+                              {
+                                "Ref": "hotelsTableReadServiceRoleD693AD8F"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                          "version": "2.0.0-rc.21"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Policy",
+                      "version": "2.0.0-rc.21"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.Role",
+                  "version": "2.0.0-rc.21"
+                }
+              },
+              "Code": {
+                "id": "Code",
+                "path": "Hotel-Booking/hotelsTable-Read/Code",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "Hotel-Booking/hotelsTable-Read/Code/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "2.0.0-rc.21"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "Hotel-Booking/hotelsTable-Read/Code/AssetBucket",
+                    "children": {
+                      "Notifications": {
+                        "id": "Notifications",
+                        "path": "Hotel-Booking/hotelsTable-Read/Code/AssetBucket/Notifications",
+                        "constructInfo": {
+                          "fqn": "constructs.Construct",
+                          "version": "10.0.5"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "2.0.0-rc.21"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "2.0.0-rc.21"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "Hotel-Booking/hotelsTable-Read/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                      },
+                      "s3Key": "2be2bdbd9601d04907a8d96d9ced76d268fa664033058c16a084c6281cfb53e0.zip"
+                    },
+                    "role": {
+                      "Fn::GetAtt": [
+                        "hotelsTableReadServiceRoleD693AD8F",
+                        "Arn"
+                      ]
+                    },
+                    "environment": {
+                      "variables": {
+                        "TABLE_NAME": "hotelsTable",
+                        "PRIMARY_KEY": "hotelId",
+                        "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1"
+                      }
+                    },
+                    "functionName": "hotelsTable-Read",
+                    "handler": "index.handler",
+                    "runtime": "nodejs14.x"
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                  "version": "2.0.0-rc.21"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_lambda_nodejs.NodejsFunction",
+              "version": "2.0.0-rc.21"
+            }
+          },
+          "hotelsTable-Update": {
+            "id": "hotelsTable-Update",
+            "path": "Hotel-Booking/hotelsTable-Update",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "Hotel-Booking/hotelsTable-Update/ServiceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "Hotel-Booking/hotelsTable-Update/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                      "version": "2.0.0-rc.21"
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "Hotel-Booking/hotelsTable-Update/ServiceRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "Hotel-Booking/hotelsTable-Update/ServiceRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": [
+                                    "dynamodb:BatchWriteItem",
+                                    "dynamodb:PutItem",
+                                    "dynamodb:UpdateItem",
+                                    "dynamodb:DeleteItem"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": [
+                                    {
+                                      "Fn::GetAtt": [
+                                        "hotelsTableAEA1B8E6",
+                                        "Arn"
+                                      ]
+                                    },
+                                    {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          {
+                                            "Fn::GetAtt": [
+                                              "hotelsTableAEA1B8E6",
+                                              "Arn"
+                                            ]
+                                          },
+                                          "/index/*"
+                                        ]
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "hotelsTableUpdateServiceRoleDefaultPolicyE662863F",
+                            "roles": [
+                              {
+                                "Ref": "hotelsTableUpdateServiceRole05C5F0E3"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                          "version": "2.0.0-rc.21"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Policy",
+                      "version": "2.0.0-rc.21"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.Role",
+                  "version": "2.0.0-rc.21"
+                }
+              },
+              "Code": {
+                "id": "Code",
+                "path": "Hotel-Booking/hotelsTable-Update/Code",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "Hotel-Booking/hotelsTable-Update/Code/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "2.0.0-rc.21"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "Hotel-Booking/hotelsTable-Update/Code/AssetBucket",
+                    "children": {
+                      "Notifications": {
+                        "id": "Notifications",
+                        "path": "Hotel-Booking/hotelsTable-Update/Code/AssetBucket/Notifications",
+                        "constructInfo": {
+                          "fqn": "constructs.Construct",
+                          "version": "10.0.5"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "2.0.0-rc.21"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "2.0.0-rc.21"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "Hotel-Booking/hotelsTable-Update/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                      },
+                      "s3Key": "1affead33adb4624be66d170972ba053cc9c81b1f49d9ea4d2f89abb88854072.zip"
+                    },
+                    "role": {
+                      "Fn::GetAtt": [
+                        "hotelsTableUpdateServiceRole05C5F0E3",
+                        "Arn"
+                      ]
+                    },
+                    "environment": {
+                      "variables": {
+                        "TABLE_NAME": "hotelsTable",
+                        "PRIMARY_KEY": "hotelId",
+                        "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1"
+                      }
+                    },
+                    "functionName": "hotelsTable-Update",
+                    "handler": "index.handler",
+                    "runtime": "nodejs14.x"
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                  "version": "2.0.0-rc.21"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_lambda_nodejs.NodejsFunction",
+              "version": "2.0.0-rc.21"
+            }
+          },
+          "hotelsTable-Delete": {
+            "id": "hotelsTable-Delete",
+            "path": "Hotel-Booking/hotelsTable-Delete",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "Hotel-Booking/hotelsTable-Delete/ServiceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "Hotel-Booking/hotelsTable-Delete/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                      "version": "2.0.0-rc.21"
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "Hotel-Booking/hotelsTable-Delete/ServiceRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "Hotel-Booking/hotelsTable-Delete/ServiceRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": [
+                                    "dynamodb:BatchWriteItem",
+                                    "dynamodb:PutItem",
+                                    "dynamodb:UpdateItem",
+                                    "dynamodb:DeleteItem"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": [
+                                    {
+                                      "Fn::GetAtt": [
+                                        "hotelsTableAEA1B8E6",
+                                        "Arn"
+                                      ]
+                                    },
+                                    {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          {
+                                            "Fn::GetAtt": [
+                                              "hotelsTableAEA1B8E6",
+                                              "Arn"
+                                            ]
+                                          },
+                                          "/index/*"
+                                        ]
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "hotelsTableDeleteServiceRoleDefaultPolicyBB6771D9",
+                            "roles": [
+                              {
+                                "Ref": "hotelsTableDeleteServiceRole03EDC9F0"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                          "version": "2.0.0-rc.21"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Policy",
+                      "version": "2.0.0-rc.21"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.Role",
+                  "version": "2.0.0-rc.21"
+                }
+              },
+              "Code": {
+                "id": "Code",
+                "path": "Hotel-Booking/hotelsTable-Delete/Code",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "Hotel-Booking/hotelsTable-Delete/Code/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "2.0.0-rc.21"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "Hotel-Booking/hotelsTable-Delete/Code/AssetBucket",
+                    "children": {
+                      "Notifications": {
+                        "id": "Notifications",
+                        "path": "Hotel-Booking/hotelsTable-Delete/Code/AssetBucket/Notifications",
+                        "constructInfo": {
+                          "fqn": "constructs.Construct",
+                          "version": "10.0.5"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "2.0.0-rc.21"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "2.0.0-rc.21"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "Hotel-Booking/hotelsTable-Delete/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                      },
+                      "s3Key": "712d0dd03efcf9657d0bf177af5f69736b3768c44f74f09b8a471bc7be1c0ccd.zip"
+                    },
+                    "role": {
+                      "Fn::GetAtt": [
+                        "hotelsTableDeleteServiceRole03EDC9F0",
+                        "Arn"
+                      ]
+                    },
+                    "environment": {
+                      "variables": {
+                        "TABLE_NAME": "hotelsTable",
+                        "PRIMARY_KEY": "hotelId",
+                        "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1"
+                      }
+                    },
+                    "functionName": "hotelsTable-Delete",
                     "handler": "index.handler",
                     "runtime": "nodejs14.x"
                   }

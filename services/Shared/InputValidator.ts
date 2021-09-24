@@ -3,7 +3,7 @@ import { Hotel } from './Model'
 
 export class MissingFieldError extends Error {}
 
-export function validateAsSpaceEntry(arg: any){
+export function validateAsHotelEntry(arg: any){
     if(!(arg as Hotel).name){
         throw new MissingFieldError('Value for name required!')
     }

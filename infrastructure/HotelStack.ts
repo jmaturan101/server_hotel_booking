@@ -17,6 +17,10 @@ export class HotelStack extends Stack {
         tableName: 'hotelsTable',
         primaryKey: 'hotelId',
         createLambdaPath: 'Create',
+        readLambdaPath: 'Read',
+        updateLambdaPath: 'Update',
+        deleteLambdaPath: 'Delete',
+        secondaryIndexes: ['location']
 
     } )
 
@@ -41,6 +45,9 @@ export class HotelStack extends Stack {
      //Hotels API integrations:
      const hotelResource = this.api.root.addResource('hotels');
      hotelResource.addMethod('POST', this.hotelsTable.createLambdaIntegration);
+     hotelResource.addMethod('GET', this.hotelsTable.readLambdaIntegration);
+     hotelResource.addMethod('PUT', this.hotelsTable.updateLambdaIntegration);
+     hotelResource.addMethod('DELETE', this.hotelsTable.deleteLambdaIntegration);
 
     }
 

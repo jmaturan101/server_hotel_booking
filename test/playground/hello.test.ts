@@ -1,9 +1,14 @@
-import { handler } from '../../services/HotelsTable/create';
+import { handler } from '../../services/HotelsTable/Create';
+import { APIGatewayProxyEvent } from 'aws-lambda';
 
-const event = {
-    body: {
-        location: 'Africa'
-    }
-}
+const event: APIGatewayProxyEvent = {
+      body: {
+          name : 'someName',
+          location: 'some location'
+      }
+} as any;
 
-handler(event as any, {} as any);
+const result = handler(event, {} as any).then((apiResult)=>{
+    const items = JSON.parse(apiResult.body);
+    console.log(123)
+}); 

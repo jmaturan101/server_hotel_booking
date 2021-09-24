@@ -1,13 +1,28 @@
 @endpoint = https://cy3zoyyuyd.execute-api.us-east-1.amazonaws.com/prod/
 
-GET {{endpoint}}/hello/
+GET {{endpoint}}/hotels/
 ###
+
+GET {{endpoint}}/hotels?hotelId=epuxluiwc5b
+###
+
 
 POST {{endpoint}}/hotels/
 Content-Type: application/json
 
 {
-    "location": "Asia",
-    "name": "Best location"
+    "location": "New Asia",
+    "name": "New Homeland"
 }
-### 
+###
+
+PUT {{endpoint}}/hotels?hotelId=8suaeo4frke
+Content-Type: application/json
+
+{
+    "location": "Updated Location"
+}
+###
+
+DELETE  {{endpoint}}/hotels?hotelId=vaixrgbjvmm
+###
