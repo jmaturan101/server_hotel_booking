@@ -6,11 +6,13 @@ import { Construct } from "constructs";
 
 
 
+
 export class IdentityPoolWrapper {
 
     private scope: Construct;
     private userPool: UserPool;
     private userPoolClient: UserPoolClient;
+    private photoBucketArn: string
 
     private identityPool: CfnIdentityPool;
     private authenticatedRole: Role;
@@ -18,10 +20,11 @@ export class IdentityPoolWrapper {
     public adminRole: Role;
 
 
-    constructor (scope: Construct, userPool: UserPool, userPoolClient: UserPoolClient){
+    constructor(scope: Construct, userPool: UserPool, userPoolClient: UserPoolClient, photoBucketArn: string) {
         this.scope = scope;
         this.userPool = userPool;
         this.userPoolClient = userPoolClient;
+        this.photoBucketArn = photoBucketArn
         this.initialize();
     }
 
@@ -89,9 +92,10 @@ export class IdentityPoolWrapper {
         this.adminRole.addToPolicy(new PolicyStatement({
             effect: Effect.ALLOW,
             actions: [
-                's3:ListAllMyBuckets'
+                's3:PutObject',
+                's3:PutObjectAcl'
             ],
-            resources: ['*']
+            resources: [this.photoBucketArn]
         }))
 }
 
